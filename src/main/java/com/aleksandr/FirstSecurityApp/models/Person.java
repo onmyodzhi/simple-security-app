@@ -3,6 +3,7 @@ package com.aleksandr.FirstSecurityApp.models;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
@@ -25,6 +26,9 @@ public class Person {
     @Size(min = 2, max = 100, message = "User name should be between 2 - 100 characters")
     @Column(name = "username")
     private String username;
+
+    @Column(name = "role")
+    private String role;
 
     @Min(value = 1900, message = "year of birth should be more than 1900")
     @Column(name = "year_of_birth")
